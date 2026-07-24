@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const CategoryIcons = {
-  "Desarrolo Frontend": (
+  "Desarrollo Frontend": (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -12,31 +12,74 @@ const CategoryIcons = {
     </svg>
   ),
   "Desarrollo Backend": (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
       <rect width="24" height="24" fill="none" />
-      <g fill="none" stroke="#a476ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+      <g
+        fill="none"
+        stroke="#a476ff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      >
         <rect width="18.5" height="15.5" x="2.75" y="4.25" rx="3.5" />
         <path d="m7.25 9l3 3l-3 3m5.5 0h4" />
       </g>
     </svg>
-  )
+  ),
+  "Herramientas y DevOps": (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="#a476ff"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+      >
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      </g>
+    </svg>
+  ),
 };
 
 const SkillsList = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   const skills = {
-    "Desarrolo Frontend": [
-      "Single Page Applications (SPAs)",
-      "Landing pages",
-      "e-commerce website",
-      "Interfaces de usuario interactivas"
+    "Desarrollo Frontend": [
+      "Arquitectura de componentes reutilizables",
+      "Optimización de rendimiento (Core Web Vitals)",
+      "State management avanzado (Redux, Zustand, Context)",
+      "Integración con APIs y manejo de datos en tiempo real",
+      "Responsive design y accesibilidad (WCAG)",
+      "Animaciones y microinteracciones fluidas",
+      "SEO técnico y Server-Side Rendering",
     ],
     "Desarrollo Backend": [
-      "Desarrollo de APIs (REST)",
-      "Gestión de bases de datos (SQL/NoSQL)",
-      "Lógica y scripting del lado del servidor",
-      "Autenticación y autorización",
+      "Diseño de APIs RESTful",
+      "Modelado y optimización de bases de datos",
+      "Autenticación JWT y OAuth 2.0",
+      "Microservicios y arquitectura distribuida",
+      "Caching y estrategias de escalabilidad",
+      "CI/CD y despliegue automatizado",
+      "Logging, monitoreo y observabilidad",
+      "Seguridad y protección contra vulnerabilidades",
+    ],
+    "Herramientas y DevOps": [
+      "Git workflow y versionado semántico",
+      "Docker y containerización",
+      "Cloud services (AWS, Vercel, Netlify)",
+      "Testing automatizado y TDD",
+      "Performance profiling y debugging",
     ],
   };
 
@@ -47,7 +90,7 @@ const SkillsList = () => {
   return (
     <div className="text-left pt-3 md:pt-9">
       <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
-        ¿Que Hago?
+        ¿Qué Hago?
       </h3>
       <ul className="space-y-4 mt-4 text-lg">
         {Object.entries(skills).map(([category, items]) => (
@@ -68,8 +111,9 @@ const SkillsList = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className={`w-6 h-6 text-[var(--white)] transform transition-transform flex-shrink-0 ${openItem === category ? "rotate-180" : ""
-                      }`}
+                    className={`w-6 h-6 text-[var(--white)] transform transition-transform flex-shrink-0 ${
+                      openItem === category ? "rotate-180" : ""
+                    }`}
                   >
                     <path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path>
                   </svg>
@@ -77,10 +121,11 @@ const SkillsList = () => {
               </div>
 
               <div
-                className={`transition-all duration-300 px-4 ${openItem === category
-                  ? "max-h-[500px] pb-4 opacity-100"
-                  : "max-h-0 opacity-0"
-                  }`}
+                className={`transition-all duration-300 px-4 ${
+                  openItem === category
+                    ? "max-h-[500px] pb-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
               >
                 <ul className="space-y-2 text-[var(--white-icon)] text-sm">
                   {items.map((item, index) => (
