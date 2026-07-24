@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import audiophile from "../assets/projects/audiophile.webp";
 import copySwitch from "../assets/projects/copy-switch.jpg";
 import darkkanban from "../assets/projects/squoosh-dark-kanban.jpg";
@@ -7,7 +8,7 @@ import rewardsShift from "../assets/projects/rewards-shift.jpg";
 
 interface Project {
   title: string;
-  image: ImageData;
+  image: ImageMetadata;
   description: string;
   link: string;
   preview?: string;
@@ -17,28 +18,28 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Kanban Board",
-    image: darkkanban as ImageData,
+    image: darkkanban,
     description: "Aplicación de gestión de proyectos con boards, columnas y tareas. Drag & drop en tiempo real, autenticación, dark/light theme y arquitectura feature-based con Next.js 16.",
     link: "https://github.com/dannfront/kanban-nextjs",
     status: "Terminado",
   },
   {
     title: "Rewards Shift App",
-    image: rewardsShift as ImageData,
+    image: rewardsShift,
     description: "Redentor automático de códigos SHiFT para Borderlands. Obtiene códigos de Reddit, autentica con Gearbox vía reverse engineering y los canjea en todas las plataformas. NestJS + AWS Lambda + Discord.",
     link: "https://github.com/dannfront/rewards-shift-app",
     status: "Terminado",
   },
   {
     title: "Copy Switch",
-    image: copySwitch as ImageData,
+    image: copySwitch,
     description: "App de escritorio con Electron + React que traduce instantáneamente cualquier texto copiado al portapapeles usando un atajo global y la API de DeepL. Historial, pin y configuración de idiomas.",
     link: "https://github.com/dannfront/copy-switch",
     status: "Terminado",
   },
   {
     title: "Audiophile e-commerce",
-    image: audiophile as ImageData,
+    image: audiophile,
     description: "E-commerce de audio premium con catálogo de productos, carrito de compras, checkout completo y diseño totalmente responsive.",
     link: "https://github.com/dannfront/audiophile",
     preview: "https://7a331eb4.audiophile-565.pages.dev/",
